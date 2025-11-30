@@ -1,0 +1,321 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(180deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Earth Header */
+.earth-header {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: #000;
+}
+
+.earth-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Main Container */
+.container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    flex: 1;
+}
+
+/* Title Styles */
+.main-title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #fbbf24;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    font-size: 2rem;
+    font-weight: 300;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Powered by Badge */
+.powered-by {
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 15px;
+    border: 2px solid #60a5fa;
+    border-radius: 20px;
+    color: #60a5fa;
+    font-weight: 500;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* City Selector */
+.selector-container {
+    margin: 30px auto;
+    max-width: 400px;
+}
+
+.city-selector {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 2px solid #3b82f6;
+    border-radius: 5px;
+    background: white;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.city-selector:hover {
+    border-color: #60a5fa;
+}
+
+.city-selector:focus {
+    outline: none;
+    border-color: #c026d3;
+    box-shadow: 0 0 0 3px rgba(192, 38, 211, 0.2);
+}
+
+.city-selector option:checked,
+.city-selector option:hover {
+    background: #c026d3;
+    color: white;
+}
+
+/* Temperature Toggle */
+.temp-toggle {
+    margin: 20px 0;
+    font-size: 1rem;
+}
+
+#currentUnit {
+    color: white;
+    margin-right: 5px;
+}
+
+.toggle-link {
+    color: #22d3ee;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.toggle-link:hover {
+    color: #67e8f9;
+    text-decoration: underline;
+}
+
+/* Loading and Error States */
+.loading,
+.error {
+    margin: 30px 0;
+    padding: 20px;
+    font-size: 1.1rem;
+}
+
+.loading {
+    text-align: center;
+}
+
+.spinner {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+.error {
+    color: #fca5a5;
+    background: rgba(220, 38, 38, 0.2);
+    border-radius: 10px;
+}
+
+/* Weather Container */
+.weather-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 40px 10px;
+    margin: 0 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Weather Card */
+.weather-card {
+    background: #1f2937;
+    border: 3px solid #3b82f6;
+    border-radius: 10px;
+    min-width: 160px;
+    max-width: 180px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+}
+
+.card-date {
+    background: #1f2937;
+    color: #fbbf24;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 15px 10px;
+    border-bottom: 2px solid #3b82f6;
+}
+
+.card-content {
+    padding: 20px 10px;
+}
+
+.weather-icon {
+    width: 80px;
+    height: 80px;
+    margin: 15px auto;
+    display: block;
+    object-fit: contain;
+}
+
+.weather-condition {
+    color: white;
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin: 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.temperature {
+    margin-top: 15px;
+}
+
+.temp-high,
+.temp-low {
+    display: block;
+    font-size: 0.95rem;
+    margin: 5px 0;
+    color: #e5e7eb;
+}
+
+.temp-high {
+    color: white;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.copyright-text {
+    color: #93c5fd;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+    }
+
+    .earth-header {
+        height: 150px;
+    }
+
+    .weather-container {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+
+    .weather-card {
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        padding: 20px 10px;
+    }
+
+    .weather-card {
+        min-width: 140px;
+    }
+}
+
+/* Scrollbar Styling for Weather Container */
+.weather-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.weather-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.weather-container::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 10px;
+}
+
+.weather-container::-webkit-scrollbar-thumb:hover {
+    background: #60a5fa;
+}
